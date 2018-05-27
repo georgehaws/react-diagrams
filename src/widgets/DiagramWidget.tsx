@@ -217,7 +217,9 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 			_.forEach(diagramModel.getNodes(), node => {
 				if ((this.state.action as SelectingAction).containsElement(node.x, node.y, diagramModel)) {
 					node.setSelected(true);
-				}
+				} else {
+          node.setSelected(false);
+        }
 			});
 
 			_.forEach(diagramModel.getLinks(), link => {
